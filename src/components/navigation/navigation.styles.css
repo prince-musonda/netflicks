@@ -1,0 +1,41 @@
+nav{
+    display:flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.44);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.nav-left{
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-right{
+    flex: 1 1;
+    padding: 0 1rem;
+    align-items: center;
+    display:flex;
+    justify-content: flex-end;
+    gap: 4rem;
+}
+
+nav button{
+    background-color: transparent;
+    border:none
+
+}
+
+nav button:hover, nav a:hover{
+    border: 1px solid rgba(255, 255, 255, 0.361);
+    cursor:pointer;
+}
+
+nav button>img, nav a>img{
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+}

@@ -1,0 +1,38 @@
+.search-panel{
+    width:100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.735);
+
+}
+.search-panel-top{
+    display:flex;
+    position: absolute;
+    top:1rem;
+    left:0;
+    right:0;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-panel-top button{
+    position: absolute;
+    left: 1rem;
+    background-color: transparent;
+    border:none;
+}
+.search-panel-top button img{
+    width: 2rem;
+    height:2rem;
+}
+
+.search-panel-top input{
+    background:transparent;
+    outline:none;
+    border: 2px solid white;
+    max-width: 65%;
+    width: 20rem;
+    padding: 0.5rem 0;
+}
+.search-panel-top input::placeholder{
+    text-align: center;
+}

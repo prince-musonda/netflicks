@@ -2,12 +2,12 @@ import { createContext } from "react";
 import { useState } from "react";
 
 export const MovieDetailsContext = createContext({
-    movieDetailsState :{},
+    movieDetailsState :{showDetails:false,movieID:null},
     setMovieDetailsState: ()=>null
 })
 
-export const MovieDetailsProvider =(children)=>{
-    const {movieDetailsState, setMovieDetailsState} = useState({showDetails:false,movieID:null});
+export const MovieDetailsProvider =({children})=>{
+    const [movieDetailsState, setMovieDetailsState] = useState({showDetails:false,movieID:null});
     const value = {movieDetailsState,setMovieDetailsState}
     return(
     <MovieDetailsContext.Provider value={value}>

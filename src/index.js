@@ -4,6 +4,7 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom'
 import { QueryClientProvider,QueryClient } from '@tanstack/react-query';
 import { SideBarProvider } from './contexts/sidebar/sideBar.context';
+import { MovieDetailsProvider } from './contexts/sidebar/movieDetails.context';
 
 const queryClient = new QueryClient({
   queries:{
@@ -16,7 +17,9 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SideBarProvider>
-          <App/>
+          <MovieDetailsProvider>
+              <App/>
+          </MovieDetailsProvider>
         </SideBarProvider>
       </BrowserRouter>
       </QueryClientProvider> 

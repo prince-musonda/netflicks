@@ -4,6 +4,7 @@ import NavigationAndSideBar from './routes/navigationAndSideBar/navigationAndSid
 import Search from './routes/search/search'
 import Home from './routes/home/home'
 import MoviesByGenre from './components/movies-by-genre/movies-by-genre.component'
+import MovieDetails from './routes/movieDetails/movieDetails.component'
 
 const App = ()=>{
   return (
@@ -12,8 +13,10 @@ const App = ()=>{
     <Route path='/' element={<NavigationAndSideBar/>}>
       <Route index element={<Home/>}/>
       <Route path='genre/' element={<MoviesByGenre/>}/>
+      <Route path='/movie-details/:movieID' element={<MovieDetails/>}/>
     </Route>
     <Route path='/search' element={<Search/>}/>
+    
   </Routes>
   )
 }

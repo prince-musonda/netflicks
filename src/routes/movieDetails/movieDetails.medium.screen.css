@@ -1,0 +1,31 @@
+/* on medium screen */
+
+@media screen and (min-width:500px) {
+    .movie-detail-container .hero-section{
+        height: 90vh;
+        display: flex;
+        align-items: flex-start;
+
+        border: 1px solid red;
+    }
+    .movie-detail-container .mini-poster{
+        width: 50%;
+        height: 70%;
+        object-fit: contain;
+        z-index: 1;
+       
+    }
+    
+    .movie-info p{
+        width: 70%;
+    }
+    
+    .movie-info .btn-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 3rem;
+
+    }
+    
+}

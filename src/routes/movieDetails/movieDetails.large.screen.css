@@ -1,0 +1,26 @@
+/* on large screens e.g televison */
+
+@media screen and (min-width:3000px) {
+   
+   .movie-detail-container .hero-section{
+    gap:15rem
+   }
+   
+    .movie-info p{
+        width: 70%;
+        font-size: 10rem;
+    }
+    
+    .movie-info h1{
+        font-size: 15rem;
+    }
+    .movie-info h3{
+        font-size: 10rem;
+    }
+
+    .btn-container button{
+        font-size: 10rem;
+        padding: 8rem 20rem;
+    }
+    
+}

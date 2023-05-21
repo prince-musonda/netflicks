@@ -1,0 +1,65 @@
+/* on smaller screens */
+@media screen and (max-width:500px){
+    .movie-detail-container .hero-section{
+        height: 50vh;
+    }
+    .movie-detail-container .mini-poster{
+        width: 14rem;
+        height: 14rem;
+        position: absolute;
+        top: 10%;
+        z-index: 1;
+    }
+    .movie-info{
+        position: absolute;
+        top: 100%;
+        padding-top: 15%;
+    }
+    .movie-info h1{
+        font-size: 1.7rem;;
+    }
+    .movie-info, h2{
+        font-size: 1.1rem;
+    }
+    .movie-info, h3{
+        font-size: 1rem;
+    
+    }
+    .movie-info p{
+        border-top: 5px solid rgb(228, 55, 55);
+        border-bottom: 5px solid rgb(210, 12, 22);
+        padding: .5rem;
+
+    }
+    .movie-info .btn-container{
+        display: flex;
+        justify-content: space-around;
+        position:absolute;
+        top: 10px;
+        left:0;
+        width: 100%;
+        
+        
+       }
+
+    
+}
+
+@media screen and (max-width:350px){
+    
+    .movie-detail-container .mini-poster{
+        width: 9rem;
+        height: 9rem;
+    }
+   
+}
+
+@media screen and (max-height:500px){
+    
+    .movie-detail-container .mini-poster{
+        height: 9rem;
+    }
+   
+
+    
+}

@@ -28,7 +28,7 @@ function MoviesByGenre(){
         if(isLoading){
             return <p className="loading">Loading</p>
         }else if(isError){
-            return <p className="loading">Error:{error}</p>
+            return <p className="loading">Error {error.message}</p>
         }else{
             return(
                 <div className="movies-by-genre-container">

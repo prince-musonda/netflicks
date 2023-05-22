@@ -1,5 +1,5 @@
 /* on smaller screens */
-@media screen and (max-width:500px){
+@media screen and (max-width:629px){
     .movie-detail-container .hero-section{
         height: 50vh;
     }
@@ -13,10 +13,11 @@
     .movie-info{
         position: absolute;
         top: 100%;
-        padding-top: 15%;
+        padding-left: 3px;
+        padding-top: 20%;
     }
     .movie-info h1{
-        font-size: 1.7rem;;
+        font-size: 1.5rem;;
     }
     .movie-info, h2{
         font-size: 1.1rem;
@@ -26,9 +27,9 @@
     
     }
     .movie-info p{
-        border-top: 5px solid rgb(228, 55, 55);
-        border-bottom: 5px solid rgb(210, 12, 22);
+        letter-spacing: 1.1px;
         padding: .5rem;
+
 
     }
     .movie-info .btn-container{
@@ -39,7 +40,12 @@
         left:0;
         width: 100%;
         
-        
+       }
+    .movie-unavailable{
+        position: absolute;
+        top: 2px;
+        width:100%;
+        left:0;
        }
 
     

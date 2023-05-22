@@ -1,12 +1,10 @@
 /* on medium screen */
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:630px) {
     .movie-detail-container .hero-section{
         height: 90vh;
         display: flex;
-        align-items: flex-start;
-
-        border: 1px solid red;
+        align-items: start;
     }
     .movie-detail-container .mini-poster{
         width: 50%;

@@ -4,6 +4,7 @@ import { fetchMoviesWithGenre } from "../../fetchers/fetchers";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import './movies-by-genre.styles.css'
 import { useState } from "react";
+import MoviePreview from "../movie-preview/movie-preview.component";
 
 
 function MoviesByGenre(){
@@ -30,12 +31,17 @@ function MoviesByGenre(){
         }else if(isError){
             return <p className="loading">Error {error.message}</p>
         }else{
+            // join the data from the different pages into a single array by
+            // create a new array containing only movies and remove anything
+            // unnesecessary
+            const movies = data.pages.flatMap((page)=> page.results)
+
+            movies = data
+            console.log(movies)
             return(
                 <div className="movies-by-genre-container">
-                    {
-                        data.pages.map((page,index)=>{
-                        return <MovieList movies={page.results} key={index}/>})
-                    }
+                    <MovieList movies={movies}/>
+                    
                     {
                         hasNextPage &&
                         <button className="load-more-btn" onClick={()=>{fetchNextPage()}}>Load more</button>

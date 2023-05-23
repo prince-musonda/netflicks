@@ -12,7 +12,7 @@ function SideBar(){
 
     return(
         <>
-              <div className="backdrop" onClick={HideSideBar}></div>
+              <div className="sidebar-backdrop backdrop" onClick={HideSideBar}></div>
               <aside className="side-bar">
                 <p className='logo'>Netflicks</p>
                 <ul>

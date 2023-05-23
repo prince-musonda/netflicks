@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { imageUrlGenerator } from '../../URL-generators/url-genrators'
 import { MovieDetailsContext } from '../../contexts/sidebar/movieDetails.context'
 import './movie-card.styles.css'
 import { useState } from "react"
@@ -12,7 +13,7 @@ function MovieCard(props){
            navigate(`/movie-details/${props.movieID}`)
         }}
         className='movie-card'>
-            <img src={`https://image.tmdb.org/t/p/original/${props.poster}`} alt={props.title} className="movie-thumbnail"/>
+            <img src={imageUrlGenerator(props.poster)} alt={props.title} className="movie-thumbnail"/>
             <p className="movie-card-title">{props.title}</p>
         </div>
     )

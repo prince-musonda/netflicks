@@ -5,6 +5,12 @@
 
 }
 
+.movies-by-genre-container .movies-list-container{
+    position: relative;
+    z-index: 2;
+    top: -4rem;
+}
+
 .load-more-btn{
     background-color: red;
     color:black;

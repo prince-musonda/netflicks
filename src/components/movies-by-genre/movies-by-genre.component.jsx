@@ -4,7 +4,7 @@ import { fetchMoviesWithGenre } from "../../fetchers/fetchers";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import './movies-by-genre.styles.css'
 import { useState } from "react";
-import MoviePreview from "../movie-preview/movie-preview.component";
+import MovieBillboard from "../movie-billboard/movie-billboard.component";
 
 
 function MoviesByGenre(){
@@ -35,12 +35,13 @@ function MoviesByGenre(){
             // create a new array containing only movies and remove anything
             // unnesecessary
             const movies = data.pages.flatMap((page)=> page.results)
-
-            movies = data
             console.log(movies)
             return(
                 <div className="movies-by-genre-container">
-                    <MovieList movies={movies}/>
+                    <MovieBillboard movie={movies[0]}/>
+                    <div className="movies-list-container">
+                        <MovieList movies={movies}/>
+                    </div>
                     
                     {
                         hasNextPage &&

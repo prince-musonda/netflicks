@@ -32,4 +32,10 @@
     }
 }
 
+@media screen and (max-width:500px) {
+    .movie-card-title{
+        opacity: 0;
+    }
+}
+
 

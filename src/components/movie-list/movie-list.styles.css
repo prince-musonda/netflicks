@@ -4,3 +4,12 @@
     justify-content: center;
     gap: 2rem;
 }
+
+/* on smaller screen sizes */
+@media screen and (max-width:500px){
+    .movies-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0;
+    }
+}

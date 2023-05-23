@@ -25,6 +25,6 @@
 /* smaller screens */
 @media screen and (max-width:500px){
     .movie-preview-container{
-        height: 55vh;
+        height: 50vh;
     }
 }

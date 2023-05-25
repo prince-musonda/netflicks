@@ -12,8 +12,8 @@ function SearchPanel() {
     const [showTvShows, setShowTvShows] = useState(false)
     const [searchWord,setSearchWord] = useState('')
 
-    const {data:moviesData,status:moviesFetchingStatus} = useQuery(['search movies',searchWord],()=>searchForMovies(searchWord))
-    const {data:tvShowsData,status:tvShowsFetchingStatus} = useQuery(['search tv shows',searchWord],()=>searchForTvShows(searchWord))
+    const {data:moviesData,status:moviesFetchingStatus} = useQuery(['search movies',searchWord],()=>searchForMovies(searchWord),{enabled:searchWord.length > 0})
+    const {data:tvShowsData,status:tvShowsFetchingStatus} = useQuery(['search tv shows',searchWord],()=>searchForTvShows(searchWord),{enabled:searchWord.length > 0})
 
     function handleOnTextChange(event){
         setSearchWord(event.target.value)

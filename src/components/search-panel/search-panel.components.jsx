@@ -12,6 +12,8 @@ function SearchPanel() {
     const [showTvShows, setShowTvShows] = useState(false)
     const [searchWord,setSearchWord] = useState('')
 
+    // search for a movie only when the user has typed something by including the enabled property and condition
+    // in the react query fetcher
     const {data:moviesData,status:moviesFetchingStatus} = useQuery(['search movies',searchWord],()=>searchForMovies(searchWord),{enabled:searchWord.length > 0})
     const {data:tvShowsData,status:tvShowsFetchingStatus} = useQuery(['search tv shows',searchWord],()=>searchForTvShows(searchWord),{enabled:searchWord.length > 0})
 

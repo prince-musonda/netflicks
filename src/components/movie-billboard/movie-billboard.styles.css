@@ -28,6 +28,7 @@
         height: 50vh;
     }
     .movie-preview-container video{
-        object-fit: none;
+        object-fit: contain;
+
     }
 }

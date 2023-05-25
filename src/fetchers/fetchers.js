@@ -57,8 +57,9 @@ export async function fetchRecommededMovies(movieID){
 export async function searchForMovies(movieName){
     if(movieName){
         try{
-            const res = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=9d5f1019dac07311575395bb62a076af&query=${movieName}`)
-            const results = (await res).data.results
+            const res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=9d5f1019dac07311575395bb62a076af&query=${movieName}`)
+            const results = res.data.results
+            console.log('movies',results)
             return results
         }catch(error){
             throw error
@@ -70,8 +71,9 @@ export async function searchForMovies(movieName){
 export async function searchForTvShows(tvShowName){
     if(tvShowName){
     try{
-            const res = axios.get(`https://api.themoviedb.org/3/search/tv?api_key=9d5f1019dac07311575395bb62a076af&query=${tvShowName}`)
-            const results = (await res).data.results
+            const res = await axios.get(`https://api.themoviedb.org/3/search/tv?api_key=9d5f1019dac07311575395bb62a076af&query=${tvShowName}`)
+            const results = res.data.results
+            console.log('tv shows',results)
             return results
         }
         catch(error){

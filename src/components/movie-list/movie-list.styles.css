@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 10px;
 }
 
 /* on smaller screen sizes */
@@ -10,7 +10,8 @@
     .movies-list{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0;
+        grid-auto-rows: 1fr;
+        gap: 10px;
         justify-content: center;
     }
 

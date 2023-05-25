@@ -57,7 +57,7 @@ export async function fetchRecommededMovies(movieID){
 export async function searchForMovies(movieName){
     if(movieName){
         try{
-            const res = axios.get(`https://api.themoviedb.org/3/search/movies?api_key=9d5f1019dac07311575395bb62a076af&query=${movieName}`)
+            const res = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=9d5f1019dac07311575395bb62a076af&query=${movieName}`)
             const results = (await res).data.results
             return results
         }catch(error){

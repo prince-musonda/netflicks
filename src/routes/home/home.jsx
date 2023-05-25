@@ -18,16 +18,11 @@ function Home(){
             </div>
         )
     }
-    else if(isPaused){
-        <div className="home-page">
-             {console.log('error',status)}
-                <p className="error loading" >Erorr: {error}</p>
-            </div>
-    }
+    
     else if(status == 'error'){
-        <div className="home-page">
+       return <div className="home-page">
              {console.log('error',status)}
-                <p className="error loading" >Erorr: {error}</p>
+                <p className="error loading" >Erorr: {error.message}</p>
             </div>
     }
     return(

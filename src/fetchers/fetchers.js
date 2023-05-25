@@ -32,10 +32,10 @@ export async function fetchMovieTrailer(movieID){
                 return true
             }
             return false
-    
-        })
-        const trailerURL = `https://youtube.com/watch?v=${trailer_object[0].key}`
-        return trailerURL
+            })
+            
+        const trailerID = trailer_object[0].key
+        return trailerID
     }catch(error){
         // react query doesn't catch errors unless explicitly thrown by the fetch function
         throw error

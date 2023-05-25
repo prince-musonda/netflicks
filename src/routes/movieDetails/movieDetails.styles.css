@@ -37,6 +37,7 @@
     border-radius: 3px;
     cursor: pointer;
     transition-duration: 0.3s;
+    font-size: 1.1rem;
 }
 .btn-container button:active{
     font-size: 1.2rem;
@@ -46,7 +47,7 @@
 }
 
 .movie-info p{
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .movie-unavailable{

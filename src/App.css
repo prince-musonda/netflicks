@@ -1,15 +1,22 @@
+@font-face {
+  font-family: roboto;
+  src: url('fonts/Roboto-Regular.ttf');
+}
 :root{
   --transparent-black: rgba(0, 0, 0, 0.782);
 }
 body{
+  font-family: roboto,sans-serif,Arial;
   margin:0;
   background-color: black;
 
 }
 *{
-  font-family: Arial, Helvetica, sans-serif;
-  color:white;
+  color:rgb(232, 232, 232);
   box-sizing: border-box;
+}
+.body{
+  font-family: 'Roboto', sans-serif;
 }
 .backdrop{
   position:fixed;

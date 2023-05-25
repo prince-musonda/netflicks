@@ -52,3 +52,30 @@ export async function fetchRecommededMovies(movieID){
         throw error
     }
 }
+
+
+export async function searchForMovies(movieName){
+    if(movieName){
+        try{
+            const res = axios.get(`https://api.themoviedb.org/3/search/movies?api_key=9d5f1019dac07311575395bb62a076af&query=${movieName}`)
+            const results = (await res).data.results
+            return results
+        }catch(error){
+            throw error
+        }
+    } 
+}
+
+
+export async function searchForTvShows(tvShowName){
+    if(tvShowName){
+    try{
+            const res = axios.get(`https://api.themoviedb.org/3/search/tv?api_key=9d5f1019dac07311575395bb62a076af&query=${tvShowName}`)
+            const results = (await res).data.results
+            return results
+        }
+        catch(error){
+            throw error
+        }
+    }
+}

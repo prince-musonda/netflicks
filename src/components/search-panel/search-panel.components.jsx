@@ -2,36 +2,43 @@ import './search-panel.styles.css'
 import { useNavigate } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import left_arrow_icon from '../../assets/left-arrow-icon.svg'
-import axios from 'axios'
+import { searchForMovies, searchForTvShows } from '../../fetchers/fetchers'
+import { useState } from 'react'
+import MovieList from '../movie-list/movie-list.component'
+
 
 function SearchPanel() {
     const navigate = useNavigate()
+    const [showTvShows, setShowTvShows] = useState(false)
+    const [searchWord,setSearchWord] = useState('')
 
-    async function searchForMovies(movieName){
-        const res = axios.get(`https://api.themoviedb.org/3/search/movies?api_key=9d5f1019dac07311575395bb62a076af&query=${movieName}`)
-        const results = (await res).data.results
-    } 
+    const {data:moviesData,status:moviesFetchingStatus} = useQuery(['search movies',searchWord],()=>searchForMovies(searchWord))
+    const {data:tvShowsData,status:tvShowsFetchingStatus} = useQuery(['search tv shows',searchWord],()=>searchForTvShows(searchWord))
 
-    async function searchForTvShows(tvShowName){
-        const res = axios.get(`https://api.themoviedb.org/3/search/tv?api_key=9d5f1019dac07311575395bb62a076af&query=${tvShowName}`)
-        const results = (await res).data.results
-    }
-
-    const {data:moviesData,status:moviesFetchingStatus} = useQuery({queryKey:['movies search'],queryFn:searchForMovies})
-    const {data:tvShowsData,status:tvShowsFetchingStatus} = useQuery({queryKey:['movies search'],queryFn:searchForMovies})
-
-    function handleOnTextChange(){
-
+    function handleOnTextChange(event){
+        setSearchWord(event.target.value)
     }
     return(
         <div className='search-panel'>
             <div className='search-panel-top'>
                 <button onClick={()=>{navigate(-1)}}><img src={left_arrow_icon} alt="go back"/></button>
-                <input type="text" onChange={''} placeholder='search for movies and TV shows'/>
+                <input type="text" onChange={handleOnTextChange} placeholder='search for movies and TV shows'/>
             </div>
-            <div>
-
+            <div className='buttons-container'>
+                <button onClick={()=>{setShowTvShows(false)}} className={showTvShows? null : 'selected-category-btn'}>
+                    Movies
+                </button>
+                <button onClick={()=>{setShowTvShows(true)}} className={showTvShows? 'selected-category-btn' : null}>
+                    TV Shows
+                </button>
             </div>
+           {
+           moviesData ?
+            <MovieList movies={showTvShows? tvShowsData : moviesData}/>
+                : 
+            searchWord.length > 0?  <p className='loading'>searching ...</p>
+                : null
+           }
         </div>
     )
 }

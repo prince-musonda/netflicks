@@ -54,7 +54,14 @@ function MovieDetails() {
                 >
                   Watch
                 </button>
-                <button>Download</button>
+                {/* download burton */}
+                <button>
+                  <a
+                    href={`https://netflicks-backend.onrender.com/download/${movieTrailerUrl}`}
+                  >
+                    Download
+                  </a>
+                </button>
               </div>
             ) : (
               <p className="movie-unavailable">Movie currently unavailble</p>
